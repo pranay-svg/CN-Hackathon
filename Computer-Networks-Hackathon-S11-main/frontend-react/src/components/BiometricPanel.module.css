@@ -1,0 +1,522 @@
+.panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 36px 48px;
+    overflow-y: auto;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Top bar ── */
+.topBar {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.topLeft {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.challengePill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 100px;
+    padding: 6px 14px 6px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--blue-400);
+}
+
+.challengePill span {
+    font-size: 1rem;
+}
+
+.topMeta {
+    display: flex;
+    flex-direction: column;
+}
+
+.topTitle {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.topSub {
+    font-size: 0.72rem;
+    color: var(--text-3);
+    font-family: var(--mono);
+    margin-top: 2px;
+}
+
+/* Timer */
+.timerRing {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.timerSvg {
+    width: 100%;
+    height: 100%;
+}
+
+.timerNum {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cyan-400);
+}
+
+/* ── Webcam ── */
+.webcamCard {
+    width: 100%;
+    max-width: 720px;
+    background: rgba(6, 14, 28, 0.9);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+        0 0 40px rgba(37, 99, 235, 0.12),
+        var(--shadow-lg);
+}
+
+/* Top status bar inside webcam card */
+.camBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: rgba(6, 14, 28, 0.9);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-3);
+}
+
+.camBarLeft {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.camRecDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--danger);
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+.camRight {
+    display: flex;
+    gap: 14px;
+}
+
+.camTag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-3);
+}
+
+/* Webcam area */
+.webcamArea {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.video,
+.canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.canvas {
+    pointer-events: none;
+}
+
+/* Corner brackets */
+.corner {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 2.5px solid var(--blue-500);
+    z-index: 5;
+}
+
+.cornerTL {
+    top: 12px;
+    left: 12px;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 5px 0 0 0;
+}
+
+.cornerTR {
+    top: 12px;
+    right: 12px;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 5px 0 0;
+}
+
+.cornerBL {
+    bottom: 12px;
+    left: 12px;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 5px;
+}
+
+.cornerBR {
+    bottom: 12px;
+    right: 12px;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 5px 0;
+}
+
+/* Scan line */
+.scanLine {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.9), rgba(6, 182, 212, 0.7), transparent);
+    animation: scan 3.5s ease-in-out infinite;
+    z-index: 6;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+
+@keyframes scan {
+    0% {
+        top: 0%;
+        opacity: 1;
+    }
+
+    48% {
+        top: 100%;
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 0;
+        top: 100%;
+    }
+
+    100% {
+        top: 0%;
+        opacity: 0;
+    }
+}
+
+/* Face detection badge */
+.faceBadge {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    background: rgba(3, 8, 15, 0.85);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 100px;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--danger);
+    z-index: 7;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+
+.faceBadgeOn {
+    border-color: rgba(16, 185, 129, 0.45);
+    color: var(--success);
+}
+
+/* Metrics overlay */
+.metricsOverlay {
+    position: absolute;
+    top: 48px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 7;
+}
+
+.metricChip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(3, 8, 15, 0.85);
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    border-radius: 6px;
+    padding: 4px 9px;
+}
+
+.metricLabel {
+    font-family: var(--mono);
+    font-size: 0.56rem;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    min-width: 32px;
+}
+
+.metricVal {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--cyan-400);
+    min-width: 36px;
+    text-align: right;
+}
+
+/* Challenge overlay */
+.challengeOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 28px 24px 18px;
+    background: linear-gradient(to top, rgba(3, 8, 15, 0.97) 0%, rgba(3, 8, 15, 0.6) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 7;
+}
+
+.challengeTag {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    color: var(--blue-400);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 100px;
+    padding: 3px 12px;
+    text-transform: uppercase;
+}
+
+.challengeInstruction {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* ── Liveness panel ── */
+.analysisRow {
+    width: 100%;
+    max-width: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.analysisCard {
+    background: rgba(6, 14, 28, 0.75);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    border-radius: var(--r-lg);
+    padding: 16px 18px;
+    backdrop-filter: blur(16px);
+}
+
+.analysisTitle {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-3);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.metricGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.metricBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.mbLabel {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.mbValue {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--blue-400);
+    font-family: var(--mono);
+}
+
+.riskRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 9px;
+}
+
+.riskLbl {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-3);
+    width: 62px;
+}
+
+.riskTrack {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.riskFill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+.riskPct {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    width: 32px;
+    text-align: right;
+}
+
+.riskStatus {
+    font-size: 0.72rem;
+    font-family: var(--mono);
+    text-align: center;
+    padding-top: 4px;
+    transition: color 0.4s;
+}
+
+/* ── Bottom row ── */
+.bottomRow {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.secNote {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-3);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.submitBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--r-md);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, var(--blue-600), var(--blue-500) 50%, #1a8cff);
+    box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: transform var(--t), box-shadow var(--t);
+    letter-spacing: -0.01em;
+}
+
+.submitBtn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(37, 99, 235, 0.55);
+}
+
+.submitBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

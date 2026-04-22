@@ -1,0 +1,634 @@
+/* ════════════════════════════════════════════════
+   DemoPage — Dedicated Demo Flow Page
+════════════════════════════════════════════════ */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(ellipse 60% 50% at 15% 0%, rgba(124, 58, 237, 0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 85% 100%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+        var(--bg);
+}
+
+/* ── Header ── */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    height: 60px;
+    background: rgba(5, 2, 9, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.12);
+}
+
+.backBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-2);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--r-sm);
+    padding: 7px 13px;
+    transition: all var(--t);
+}
+
+.backBtn:hover {
+    color: var(--text);
+    border-color: rgba(139, 92, 246, 0.3);
+    background: rgba(139, 92, 246, 0.07);
+}
+
+.headerBrand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headerLogo {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--blue-700), var(--blue-400));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 0 16px rgba(124, 58, 237, 0.4);
+}
+
+.headerName {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.headerBadge {
+    font-family: var(--mono);
+    font-size: 0.52rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--cyan-400);
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 4px;
+    padding: 2px 8px;
+    animation: blink 2.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.resetBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-3);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--r-sm);
+    padding: 7px 13px;
+    transition: all var(--t);
+}
+
+.resetBtn:hover {
+    color: var(--text-2);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ── Body layout ── */
+.body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 48px;
+    overflow-y: auto;
+}
+
+/* ── Demo card ── */
+.demoCard {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(14, 8, 32, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.18);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+        0 0 70px rgba(124, 58, 237, 0.18),
+        0 24px 60px rgba(0, 0, 0, 0.5);
+    animation: fadeUp 0.5s var(--spring);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 22px;
+    background: rgba(255, 255, 255, 0.025);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.70rem;
+    font-family: var(--mono);
+}
+
+.cardTopLeft {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-3);
+}
+
+.statusDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--text-3);
+    box-shadow: 0 0 5px var(--text-3);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.dotIdle {
+    background: var(--text-3);
+    box-shadow: none;
+}
+
+.dotRunning {
+    background: var(--blue-400);
+    box-shadow: 0 0 8px var(--blue-400);
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+.dotSuccess {
+    background: var(--success);
+    box-shadow: 0 0 8px var(--success);
+}
+
+.dotError {
+    background: var(--danger);
+    box-shadow: 0 0 8px var(--danger);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.cardTopText {
+    color: var(--text-3);
+}
+
+.cardTopRight {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--cyan-400);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 0.62rem;
+}
+
+.cardBody {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ── Demo hero ── */
+.demoHero {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.demoOrb {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1.5px solid rgba(139, 92, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-400);
+    flex-shrink: 0;
+    transition: all 0.4s var(--spring);
+}
+
+.orbActive {
+    background: rgba(139, 92, 246, 0.18);
+    border-color: var(--blue-400);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.35);
+}
+
+.orbSpinner {
+    width: 28px;
+    height: 28px;
+    border: 2.5px solid rgba(167, 139, 250, 0.25);
+    border-top-color: var(--blue-400);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.demoHeroText {
+    flex: 1;
+}
+
+.demoTitle {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+.demoSub {
+    font-size: 0.78rem;
+    color: var(--text-3);
+    line-height: 1.55;
+}
+
+/* ── Steps ── */
+.stepsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stepsLabel {
+    font-size: 0.66rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-3);
+}
+
+.stepList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ── Start button ── */
+.startBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px;
+    border-radius: var(--r-md);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, var(--blue-700), var(--blue-500), #9F67FA);
+    background-size: 200% 100%;
+    box-shadow: 0 6px 24px rgba(124, 58, 237, 0.5);
+    transition: transform var(--t), box-shadow var(--t), background-position 0.4s;
+}
+
+.startBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(124, 58, 237, 0.65);
+    background-position: 100% 0;
+}
+
+.startBtn:active {
+    transform: scale(0.98);
+}
+
+/* ── Error banner ── */
+.errorBanner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    background: rgba(239, 68, 68, 0.07);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: var(--r-md);
+    font-size: 0.76rem;
+    color: #FCA5A5;
+    line-height: 1.5;
+}
+
+.errorTop {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #FCA5A5;
+    font-weight: 700;
+    font-size: 0.82rem;
+}
+
+.errorBody {
+    color: rgba(252, 165, 165, 0.75);
+    line-height: 1.55;
+    font-size: 0.74rem;
+}
+
+.errorCode {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    border-radius: 7px;
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: #FCA5A5;
+    line-height: 1.8;
+}
+
+.errorCode code {
+    display: block;
+}
+
+.retryBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    margin-top: 4px;
+    padding: 7px 14px;
+    border-radius: var(--r-xs);
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #FCA5A5;
+    font-size: 0.72rem;
+    font-weight: 600;
+    transition: all var(--t);
+}
+
+.retryBtn:hover {
+    background: rgba(239, 68, 68, 0.25);
+}
+
+/* ── Running note ── */
+.runningNote {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: rgba(139, 92, 246, 0.06);
+    border: 1px solid rgba(139, 92, 246, 0.18);
+    border-radius: var(--r-md);
+    font-size: 0.76rem;
+    color: var(--blue-300);
+}
+
+.runSpinner {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid rgba(167, 139, 250, 0.25);
+    border-top-color: var(--blue-400);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+/* ── Webcam privacy note ── */
+.webcamNote {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 0.67rem;
+    color: var(--text-3);
+    line-height: 1.55;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--r-md);
+}
+
+.webcamNote svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--text-3);
+}
+
+/* ── Log panel ── */
+.logPanel {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(139, 92, 246, 0.1);
+    background: rgba(5, 2, 9, 0.5);
+    min-height: 0;
+}
+
+.logHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    flex-shrink: 0;
+}
+
+.logTitle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-2);
+}
+
+.logDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 6px var(--success);
+    animation: blink 2.5s ease-in-out infinite;
+}
+
+.logCount {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 10px;
+    padding: 1px 7px;
+    font-size: 0.6rem;
+    color: var(--blue-300);
+}
+
+.clearBtn {
+    color: var(--text-3);
+    transition: color var(--t);
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.clearBtn:hover {
+    color: var(--text-2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.logBody {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-height: 0;
+}
+
+.logEmpty {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-3);
+    text-align: center;
+    padding: 20px;
+    opacity: 0.6;
+}
+
+.logEntry {
+    display: flex;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 0.64rem;
+    line-height: 1.55;
+    padding: 4px 6px;
+    border-radius: 5px;
+    animation: fadeIn 0.18s ease both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.logTs {
+    color: var(--text-3);
+    flex-shrink: 0;
+}
+
+.logMsg {
+    color: var(--text-2);
+    word-break: break-word;
+}
+
+.entryInfo {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.entrySuccess {
+    background: rgba(16, 185, 129, 0.06);
+}
+
+.entrySuccess .logMsg {
+    color: var(--success);
+}
+
+.entryWarn {
+    background: rgba(245, 158, 11, 0.06);
+}
+
+.entryWarn .logMsg {
+    color: var(--warn);
+}
+
+.entryError {
+    background: rgba(239, 68, 68, 0.06);
+}
+
+.entryError .logMsg {
+    color: var(--danger);
+}
+
+.entryCrypto {
+    background: rgba(139, 92, 246, 0.06);
+}
+
+.entryCrypto .logMsg {
+    color: var(--blue-300);
+}
+
+.logFooter {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    color: var(--text-3);
+    flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+    .logPanel {
+        max-height: 280px;
+        border-left: none;
+        border-top: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .main {
+        padding: 24px 16px;
+    }
+}

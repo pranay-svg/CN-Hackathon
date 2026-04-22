@@ -1,0 +1,31 @@
+.field {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float var(--dur, 8s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    filter: blur(0.5px);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+
+    33% {
+        transform: translateY(-25px) translateX(8px) scale(1.15);
+    }
+
+    66% {
+        transform: translateY(-12px) translateX(-6px) scale(0.9);
+    }
+}

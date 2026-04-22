@@ -1,0 +1,254 @@
+.panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 48px;
+    animation: fadeUp 0.5s var(--spring);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Orb ── */
+.orbWrap {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid;
+    animation: expand 2.6s ease-out infinite;
+}
+
+.ring1 {
+    width: 96px;
+    height: 96px;
+    border-color: rgba(16, 185, 129, 0.5);
+    animation-delay: 0s;
+}
+
+.ring2 {
+    width: 96px;
+    height: 96px;
+    border-color: rgba(16, 185, 129, 0.3);
+    animation-delay: 0.5s;
+}
+
+.ring3 {
+    width: 96px;
+    height: 96px;
+    border-color: rgba(16, 185, 129, 0.12);
+    animation-delay: 1s;
+}
+
+@keyframes expand {
+    0% {
+        transform: scale(0.75);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2.1);
+        opacity: 0;
+    }
+}
+
+.orb {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #059669 0%, #10B981 50%, #06B6D4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.5), 0 0 60px rgba(16, 185, 129, 0.15);
+    z-index: 1;
+    animation: orbPop 0.55s var(--spring);
+}
+
+@keyframes orbPop {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ── Headline ── */
+.title {
+    font-size: 1.9rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    text-align: center;
+    background: linear-gradient(120deg, #10B981, #06B6D4 60%, #3B82F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    text-align: center;
+}
+
+/* ── Summary grid ── */
+.summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 560px;
+}
+
+.summaryCard {
+    background: rgba(6, 14, 28, 0.7);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    border-radius: var(--r-md);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: border-color var(--t);
+}
+
+.summaryCard:hover {
+    border-color: rgba(59, 130, 246, 0.25);
+}
+
+.summaryLabel {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-3);
+    font-family: var(--mono);
+}
+
+.summaryVal {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--success);
+}
+
+/* ── Token block ── */
+.tokenBlock {
+    width: 100%;
+    max-width: 560px;
+    background: rgba(6, 14, 28, 0.8);
+    border: 1px solid rgba(6, 182, 212, 0.18);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.tokenHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.025);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tokenTitle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-2);
+}
+
+.copyBtn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.22);
+    border-radius: var(--r-xs);
+    color: var(--cyan-400);
+    padding: 5px 11px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--t);
+}
+
+.copyBtn:hover {
+    background: rgba(6, 182, 212, 0.15);
+}
+
+.tokenValue {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    color: var(--cyan-400);
+    word-break: break-all;
+    padding: 12px 16px;
+    line-height: 1.65;
+    background: rgba(6, 182, 212, 0.03);
+}
+
+.tokenMeta {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 9px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--text-3);
+}
+
+.tokenHash {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Reset button ── */
+.resetBtn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 22px;
+    border-radius: var(--r-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-2);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    cursor: pointer;
+    transition: all var(--t);
+    letter-spacing: -0.01em;
+}
+
+.resetBtn:hover {
+    border-color: rgba(59, 130, 246, 0.35);
+    color: var(--text);
+    background: rgba(59, 130, 246, 0.06);
+}

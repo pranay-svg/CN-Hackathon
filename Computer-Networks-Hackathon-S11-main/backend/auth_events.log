@@ -1,0 +1,56 @@
+{"ts": "2026-03-07T07:05:14.307190+00:00", "type": "INIT", "msg": "Auth request from user=botlalucky24@gmail.com session=IPs5Z5tOF3bSVSl-W7k5VZYWAv7Hrttxbjvt_gvspEc", "meta": {}}
+{"ts": "2026-03-07T07:05:14.366762+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=IPs5Z5tOF3bSVSl-W7k5VZYWAv7Hrttxbjvt_gvspEc nonce_prefix=67623fb3\u2026", "meta": {}}
+{"ts": "2026-03-07T07:05:14.392335+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=IPs5Z5tOF3bSVSl-W7k5VZYWAv7Hrttxbjvt_gvspEc", "meta": {}}
+{"ts": "2026-03-07T07:05:14.393580+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T07:05:20.082449+00:00", "type": "INIT", "msg": "Auth request from user=botlalucky24@gmail.com session=BuswvaMH2-wcmhi_L1U-ykzYONLJpkgYkE6nJoRk9F4", "meta": {}}
+{"ts": "2026-03-07T07:05:20.143027+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=BuswvaMH2-wcmhi_L1U-ykzYONLJpkgYkE6nJoRk9F4 nonce_prefix=4d4c7d6e\u2026", "meta": {}}
+{"ts": "2026-03-07T07:05:20.168460+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=BuswvaMH2-wcmhi_L1U-ykzYONLJpkgYkE6nJoRk9F4", "meta": {}}
+{"ts": "2026-03-07T07:05:20.172078+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T07:05:23.650341+00:00", "type": "INIT", "msg": "Auth request from user=botlalucky24@gmail.com session=xCY3-OI4-xJTOHzN0sQPNI89u6swPhzgc0nqg2QUhVI", "meta": {}}
+{"ts": "2026-03-07T07:05:23.674052+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=xCY3-OI4-xJTOHzN0sQPNI89u6swPhzgc0nqg2QUhVI nonce_prefix=ec5beec0\u2026", "meta": {}}
+{"ts": "2026-03-07T07:05:23.692465+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=xCY3-OI4-xJTOHzN0sQPNI89u6swPhzgc0nqg2QUhVI", "meta": {}}
+{"ts": "2026-03-07T07:05:23.694023+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T07:05:28.662211+00:00", "type": "INIT", "msg": "Auth request from user=botlalucky24@gmail.com session=zuX-dl-BsZ4u6MhI_lpHrNqnn1oxuxgQFrDWzRdznww", "meta": {}}
+{"ts": "2026-03-07T07:05:28.685870+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=zuX-dl-BsZ4u6MhI_lpHrNqnn1oxuxgQFrDWzRdznww nonce_prefix=1af8dc7a\u2026", "meta": {}}
+{"ts": "2026-03-07T07:05:28.705861+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=zuX-dl-BsZ4u6MhI_lpHrNqnn1oxuxgQFrDWzRdznww", "meta": {}}
+{"ts": "2026-03-07T07:05:28.708033+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T07:05:55.189911+00:00", "type": "INIT", "msg": "Auth request from user=botlalucky24@gmail.com session=8mbAFXRgc_ii1XqI9G7wuVEdo38-zt3Yf2U2o8_x-70", "meta": {}}
+{"ts": "2026-03-07T07:05:55.205386+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=8mbAFXRgc_ii1XqI9G7wuVEdo38-zt3Yf2U2o8_x-70 nonce_prefix=8c3683c2\u2026", "meta": {}}
+{"ts": "2026-03-07T07:05:55.221822+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=8mbAFXRgc_ii1XqI9G7wuVEdo38-zt3Yf2U2o8_x-70", "meta": {}}
+{"ts": "2026-03-07T07:05:55.223029+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T07:08:06.461890+00:00", "type": "INIT", "msg": "Auth request from user=ere2qi3rhbtgweak fnb session=Oc_vgO2KYk5RqbTdPeE5XNVIm_tHoGDYr7nkk0KrEkQ", "meta": {}}
+{"ts": "2026-03-07T07:08:06.480821+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=Oc_vgO2KYk5RqbTdPeE5XNVIm_tHoGDYr7nkk0KrEkQ nonce_prefix=14770bae\u2026", "meta": {}}
+{"ts": "2026-03-07T07:08:06.511451+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=Oc_vgO2KYk5RqbTdPeE5XNVIm_tHoGDYr7nkk0KrEkQ", "meta": {}}
+{"ts": "2026-03-07T07:08:06.513956+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T07:14:05.679274+00:00", "type": "INIT", "msg": "Auth request from user=gdhbvsV session=NJLJ-UHrQQlFWxAvbtOwED2fH0C87RM-i1k_BI-mkUQ", "meta": {}}
+{"ts": "2026-03-07T07:14:05.705165+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=NJLJ-UHrQQlFWxAvbtOwED2fH0C87RM-i1k_BI-mkUQ nonce_prefix=7f328511\u2026", "meta": {}}
+{"ts": "2026-03-07T07:14:05.728784+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=NJLJ-UHrQQlFWxAvbtOwED2fH0C87RM-i1k_BI-mkUQ", "meta": {}}
+{"ts": "2026-03-07T07:14:05.730163+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T07:14:06.674351+00:00", "type": "INIT", "msg": "Auth request from user=gdhbvsV session=dEMuuOmOz38eFeJ1B_ZFZO78KkZjC-nPzWNSUrnf4K4", "meta": {}}
+{"ts": "2026-03-07T07:14:06.695310+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=dEMuuOmOz38eFeJ1B_ZFZO78KkZjC-nPzWNSUrnf4K4 nonce_prefix=a641d0fa\u2026", "meta": {}}
+{"ts": "2026-03-07T07:14:06.720105+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=dEMuuOmOz38eFeJ1B_ZFZO78KkZjC-nPzWNSUrnf4K4", "meta": {}}
+{"ts": "2026-03-07T07:14:06.721638+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T08:16:58.542437+00:00", "type": "INIT", "msg": "Auth request from user=demo@humanity.io session=_DUqkX2Tqw1pMR48Ix4AMxiT4DcyE7YWD8zwnaPw_sI", "meta": {}}
+{"ts": "2026-03-07T08:16:58.585020+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=_DUqkX2Tqw1pMR48Ix4AMxiT4DcyE7YWD8zwnaPw_sI nonce_prefix=9190c1f6\u2026", "meta": {}}
+{"ts": "2026-03-07T08:16:58.608096+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=_DUqkX2Tqw1pMR48Ix4AMxiT4DcyE7YWD8zwnaPw_sI", "meta": {}}
+{"ts": "2026-03-07T08:16:58.609333+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T08:17:03.128095+00:00", "type": "INIT", "msg": "Auth request from user=demo@humanity.io session=3lGlDR7HJrDhv-DK6zuzbFrs4ZEB81r5qbk3WeI6wy4", "meta": {}}
+{"ts": "2026-03-07T08:17:03.148964+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=3lGlDR7HJrDhv-DK6zuzbFrs4ZEB81r5qbk3WeI6wy4 nonce_prefix=609b511a\u2026", "meta": {}}
+{"ts": "2026-03-07T08:17:03.167662+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=3lGlDR7HJrDhv-DK6zuzbFrs4ZEB81r5qbk3WeI6wy4", "meta": {}}
+{"ts": "2026-03-07T08:17:03.168825+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T08:17:07.609066+00:00", "type": "INIT", "msg": "Auth request from user=demo@humanity.io session=saReCPV5KsXoMSaXpmfKpsWp84NUmJi8mLVjkCR2gko", "meta": {}}
+{"ts": "2026-03-07T08:17:07.626472+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=saReCPV5KsXoMSaXpmfKpsWp84NUmJi8mLVjkCR2gko nonce_prefix=040dc1a7\u2026", "meta": {}}
+{"ts": "2026-03-07T08:17:07.640500+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=saReCPV5KsXoMSaXpmfKpsWp84NUmJi8mLVjkCR2gko", "meta": {}}
+{"ts": "2026-03-07T08:17:07.641476+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T08:17:09.922800+00:00", "type": "INIT", "msg": "Auth request from user=demo@humanity.io session=-h5YeWauwy73uf3VCdt5DdaiK10iXeCb0sPFp4GFX-w", "meta": {}}
+{"ts": "2026-03-07T08:17:09.936931+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=-h5YeWauwy73uf3VCdt5DdaiK10iXeCb0sPFp4GFX-w nonce_prefix=3ec291bd\u2026", "meta": {}}
+{"ts": "2026-03-07T08:17:09.949687+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=-h5YeWauwy73uf3VCdt5DdaiK10iXeCb0sPFp4GFX-w", "meta": {}}
+{"ts": "2026-03-07T08:17:09.950198+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T08:17:23.344011+00:00", "type": "INIT", "msg": "Auth request from user=demo@humanity.io session=0sBnnqYgJ-kLlxI1Y9BsoRnnM5Mnd51A6ACOe9zKGOY", "meta": {}}
+{"ts": "2026-03-07T08:17:23.363185+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=0sBnnqYgJ-kLlxI1Y9BsoRnnM5Mnd51A6ACOe9zKGOY nonce_prefix=d567173f\u2026", "meta": {}}
+{"ts": "2026-03-07T08:17:23.376011+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=0sBnnqYgJ-kLlxI1Y9BsoRnnM5Mnd51A6ACOe9zKGOY", "meta": {}}
+{"ts": "2026-03-07T08:17:23.376507+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}
+{"ts": "2026-03-07T08:17:33.688583+00:00", "type": "INIT", "msg": "Auth request from user=demo@humanity.io session=kC8HX6dRm2XcC7JQxX-R5NpySA1-2batvEH-KsO8vFw", "meta": {}}
+{"ts": "2026-03-07T08:17:33.702928+00:00", "type": "CHALLENGE", "msg": "Crypto challenge issued session=kC8HX6dRm2XcC7JQxX-R5NpySA1-2batvEH-KsO8vFw nonce_prefix=1d0752bf\u2026", "meta": {}}
+{"ts": "2026-03-07T08:17:33.720320+00:00", "type": "KEY_FAIL", "msg": "Invalid signature session=kC8HX6dRm2XcC7JQxX-R5NpySA1-2batvEH-KsO8vFw", "meta": {}}
+{"ts": "2026-03-07T08:17:33.720846+00:00", "type": "REJECT", "msg": "Cryptographic signature verification FAILED", "meta": {}}

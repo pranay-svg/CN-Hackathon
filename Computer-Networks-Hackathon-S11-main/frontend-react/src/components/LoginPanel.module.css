@@ -1,0 +1,509 @@
+/* ═══════════════════════════════════════════════
+   LoginPanel — Professional split layout
+   Left: Hero/features   Right: Auth form card
+═══════════════════════════════════════════════ */
+
+.wrapper {
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+}
+
+/* ═══════════════ LEFT HERO ═══════════════ */
+.hero {
+    flex: 0 0 52%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 56px 60px 72px;
+    position: relative;
+    border-right: 1px solid var(--border-3);
+}
+
+/* Subtle inner glow on hero side */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 0% 50%, rgba(124, 58, 237, 0.09) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* ── Wordmark ── */
+.wordmark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logoMark {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--blue-600), var(--cyan-500));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    flex-shrink: 0;
+}
+
+.logoName {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.logoVersion {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    color: var(--blue-400);
+    letter-spacing: 0.12em;
+    margin-top: 1px;
+}
+
+/* ── Hero text ── */
+.heroText {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.heroHeadline {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    color: var(--text);
+}
+
+/* Gradient on last word would be nice but keep it clean for professional look */
+.heroSub {
+    font-size: 0.95rem;
+    color: var(--text-2);
+    line-height: 1.65;
+    max-width: 440px;
+}
+
+/* ── Feature list ── */
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.featureRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.featureIcon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-400);
+    flex-shrink: 0;
+    transition: var(--t);
+}
+
+.featureRow:hover .featureIcon {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 16px rgba(139, 92, 246, 0.2);
+}
+
+.featureTitle {
+    font-size: 0.83rem;
+    font-weight: 650;
+    color: var(--text);
+    margin-bottom: 3px;
+    letter-spacing: -0.01em;
+}
+
+.featureDesc {
+    font-size: 0.77rem;
+    color: var(--text-3);
+    line-height: 1.5;
+}
+
+/* ── Protocol tech badges ── */
+.protoBadges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.protoBadge {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: var(--text-3);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 5px;
+    padding: 3px 9px;
+    letter-spacing: 0.04em;
+}
+
+/* ═══════════════ RIGHT FORM ═══════════════ */
+.formSide {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 48px 48px 40px;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(14, 8, 32, 0.75);
+    backdrop-filter: blur(32px) saturate(1.3);
+    -webkit-backdrop-filter: blur(32px) saturate(1.3);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+        0 0 60px rgba(124, 58, 237, 0.15),
+        var(--shadow-lg);
+}
+
+/* ── Card top bar ── */
+.cardTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.025);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.7rem;
+    font-family: var(--mono);
+}
+
+.cardTopLeft {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-3);
+}
+
+.statusDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 6px var(--success);
+    animation: blink 2.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+}
+
+.cardTopText {
+    color: var(--text-3);
+}
+
+.cardTopRight {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--blue-400);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 0.65rem;
+}
+
+/* ── Card body ── */
+.cardBody {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.cardHeadGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cardTitle {
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    color: var(--text);
+    line-height: 1.1;
+}
+
+.cardSub {
+    font-size: 0.8rem;
+    color: var(--text-3);
+    line-height: 1.5;
+}
+
+/* ── Input field ── */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-2);
+}
+
+.inputWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 13px;
+    color: var(--text-3);
+    display: flex;
+    pointer-events: none;
+    transition: color var(--t);
+}
+
+.input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    border-radius: var(--r-md);
+    color: var(--text);
+    font-size: 0.9rem;
+    padding: 12px 14px 12px 40px;
+    outline: none;
+    transition: border-color var(--t), box-shadow var(--t);
+    caret-color: var(--blue-400);
+}
+
+.input::placeholder {
+    color: var(--text-3);
+    font-size: 0.85rem;
+}
+
+.input:focus {
+    border-color: rgba(139, 92, 246, 0.55);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+.input:focus~.inputIcon,
+.inputWrap:focus-within .inputIcon {
+    color: var(--blue-400);
+}
+
+.input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Steps section ── */
+.stepsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stepsLabel {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-3);
+    padding-bottom: 1px;
+}
+
+.stepList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ── CTA Button ── */
+.cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 20px;
+    border-radius: var(--r-md);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #fff;
+    background: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-500) 50%, #9F67FA 100%);
+    background-size: 200% 100%;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.5), 0 1px 0 rgba(255, 255, 255, 0.12) inset;
+    transition: transform var(--t), box-shadow var(--t), background-position 0.4s;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--t);
+}
+
+.cta:hover:not(:disabled)::before {
+    opacity: 1;
+}
+
+.cta:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(124, 58, 237, 0.6), 0 1px 0 rgba(255, 255, 255, 0.14) inset;
+    background-position: 100% 0;
+}
+
+.cta:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.cta:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    background-position: 0%;
+}
+
+/* ── Demo button ── */
+.demoBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 11px 20px;
+    border-radius: var(--r-md);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--blue-300);
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    cursor: pointer;
+    transition: background var(--t), border-color var(--t), color var(--t), transform var(--t), box-shadow var(--t);
+    position: relative;
+    overflow: hidden;
+}
+
+.demoBtn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(16, 185, 129, 0.08));
+    opacity: 0;
+    transition: opacity var(--t);
+    border-radius: inherit;
+}
+
+.demoBtn:hover:not(:disabled)::before {
+    opacity: 1;
+}
+
+.demoBtn:hover:not(:disabled) {
+    background: rgba(139, 92, 246, 0.14);
+    border-color: rgba(139, 92, 246, 0.45);
+    color: var(--blue-300);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+}
+
+.demoBtn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.demoBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.spinnerDark {
+    width: 13px;
+    height: 13px;
+    border: 1.5px solid rgba(167, 139, 250, 0.3);
+    border-top-color: var(--blue-400);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+.ctaText {
+    flex: 1;
+    text-align: center;
+}
+
+.spinner {
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Footnote ── */
+.footnote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.67rem;
+    color: var(--text-3);
+    text-align: center;
+    gap: 1px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .hero {
+        border-right: none;
+        border-bottom: 1px solid var(--border-3);
+        padding: 36px 24px;
+    }
+
+    .formSide {
+        padding: 32px 20px;
+    }
+}
